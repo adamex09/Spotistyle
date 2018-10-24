@@ -10,10 +10,7 @@ var client_secret = 'CLIENT_SECRET'; // Your secret
 var redirect_uri = 'REDIRECT_URI'; // Your redirect uri
 
 var app = express();
-
-app.set('port', (process.env.PORT || 5000))
-
-app.get('/', (req, res) => res.send('Hello World!'))
+var port = process.env.PORT || 5000;
 
 /**
  * Generates a random string containing numbers and letters
@@ -32,7 +29,7 @@ var generateRandomString = function(length) {
 
 var stateKey = 'spotify_auth_state';
 
-var app = express();
+
 
 app.use(express.static(__dirname + '/public'))
    .use(cors())
@@ -142,6 +139,6 @@ app.get('/refresh_token', function(req, res) {
 });
 
 //Port listening
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
-})
+app.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
+});
