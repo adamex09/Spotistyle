@@ -10,7 +10,7 @@ var port = process.env.PORT || 5000;
 
 var client_id = process.env.CLIENT_ID; // Your client id
 var client_secret = process.env.CLIENT_SECRET; // Your secret
-var redirect_uri = 'http://localhost:' + process.env.PORT + '/callback/'; // Your redirect uri
+var redirect_uri = process.env.REDIRECT_URI; // Your redirect uri
 
 console.log('Redirect uri:' + redirect_uri);
 
